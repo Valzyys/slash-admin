@@ -4,13 +4,11 @@ import tailwindcss from '@tailwindcss/vite'
 import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin'
 import tsconfigPaths from 'vite-tsconfig-paths'
 import { visualizer } from 'rollup-plugin-visualizer'
-import { cloudflare } from '@cloudflare/vite-plugin'
 
 const isProduction = process.env.NODE_ENV === 'production'
 
 export default defineConfig({
   plugins: [
-    cloudflare(),
     react(),
     vanillaExtractPlugin({
       identifiers: ({ debugId }) => `${debugId}`,
